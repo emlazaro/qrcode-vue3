@@ -34,7 +34,7 @@ export default defineComponent({
     },
     ButtonName: {
       type: String,
-      default: "Download3"
+      default: "Download QRCode"
     },
     height: {
       type: Number,
@@ -122,6 +122,12 @@ export default defineComponent({
         cornersDotOptions: this.cornersDotOptions
       })
     };
+  },
+  methods: {
+    onDownloadClick() {
+      console.log('clicked...')
+      this.qrCode.download(this.downloadOptions)
+    }
   },
   watch: {
     async value() {
